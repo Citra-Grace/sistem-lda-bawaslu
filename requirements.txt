@@ -3,4 +3,4 @@ pandas
 matplotlib
 wordcloud
 numpy
-gensim
+gensim==4.3.2
