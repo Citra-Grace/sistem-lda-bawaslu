@@ -204,21 +204,15 @@ TOPIC_DESCRIPTIONS = {
 @st.cache_resource
 def load_model():
     import pickle
-    from gensim import corpora
-    from gensim.models import LdaModel
-
+    
     df = pd.read_csv("dataset_laporan_bawaslu_preprocessed.csv")
+    
+    with open("model_data/model_results.pkl", "rb") as f:
+        model_data = pickle.load(f)
+    
+    return df, model_data
 
-    # Load model dari file yang sudah disimpan
-    lda_model = LdaModel.load("lda.model")
-    dictionary = corpora.Dictionary.load("dictionary.gensim")
-
-    import gensim.corpora as gensim_corpora
-    corpus = list(gensim_corpora.MmCorpus("corpus.mm"))
-
-    texts = df["final_text"].apply(lambda x: str(x).split()).tolist()
-
-    return df, texts, dictionary, corpus, lda_model
+df, model_data = load_model()
 
 
 # ============================================================
