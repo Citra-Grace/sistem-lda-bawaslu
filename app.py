@@ -73,6 +73,33 @@ st.markdown("""
         text-align: center; color: #999;
         font-size: 0.78rem; margin-top: 2rem; padding: 1rem 0;
     }
+    /* Perbaikan teks menu radio sidebar di Streamlit Cloud */
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label p {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Label judul radio */
+section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
