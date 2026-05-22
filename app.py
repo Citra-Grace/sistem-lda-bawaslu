@@ -381,7 +381,7 @@ elif menu == "Eksplorasi Topik":
     # Chart + Word Cloud side by side
     col_chart, col_cloud = st.columns([1, 1])
 
-    topic_terms = lda_model.show_topic(topic_number, topn=10)
+    topic_terms = model_data["topics_data"][topic_number][:10]
     words = [t[0] for t in topic_terms]
     weights = [t[1] for t in topic_terms]
 
